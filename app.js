@@ -18,7 +18,7 @@ enableButtons();
 });
 //END DOC READY//
 
-//****FUNCTIONS****///
+//**********FUNCTIONS*********///
 
 //BEGIN JSON CALL//
 function getJsonCall (){
@@ -54,12 +54,12 @@ function showPosition (){
 
 function showStudentButton (array){
   var buttonDiv = $("#buttonHolder")
-  var htmlString = '<button id= "prevButton">Previous</button>'
+  var htmlString = '<button class = "btn btn-danger" id= "prevButton">Previous</button>'
 
   array.forEach (function(student, index) {
-    htmlString += '<button class = "student-button" data-index="' + index + '">'+ student.first_name + "</button>";
+    htmlString += '<button class = "btn btn-success student-button" data-index="' + index + '">'+ student.first_name + "</button>";
   });
-    htmlString += '<button type="button" id="nextButton">Next</button>';
+    htmlString += '<button class = "btn btn-danger" id="nextButton">Next</button>';
     buttonDiv.html(htmlString)
 };//end show student button
 
@@ -71,8 +71,7 @@ function enableButtons () {
   $(document).on ("click", "#nextButton", incrementButton);
   $(document).on("click", "#prevButton", decrementButton);
   $(document).on("click", ".student-button", studentButton)
-
-};
+};//end enable buttons
 
 //END BUTTON EVENT HANDLERS//
 
